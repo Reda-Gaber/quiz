@@ -154,13 +154,31 @@ async function openQuizEditor(event, quizId) {
     const form = document.getElementById('quiz-edit-form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const fd = new FormData(form);
+
+      // gather values
+      const title = form.querySelector('input[name="title"]').value;
+      const description = form.querySelector('textarea[name="description"]').value;
+      const difficulty = form.querySelector('select[name="difficulty"]').value;
+      const duration = form.querySelector('input[name="duration"]').value;
+      const questionCount = form.querySelector('input[name="questionCount"]').value;
+
+      const imageInput = form.querySelector('input[name="image"]');
 
       try {
+        let imageData = null;
+        if (imageInput && imageInput.files && imageInput.files[0]) {
+          imageData = await fileToDataURL(imageInput.files[0]);
+        }
+
+        const payload = { title, description, difficulty, duration, questionCount };
+        if (imageData) payload.imageData = imageData;
+
         const r = await fetch(`/api/quizzes/${encodeURIComponent(quiz.id)}`, {
           method: 'PUT',
-          body: fd
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
+
         const j = await r.json();
         if (!j.success) throw new Error(j.message || 'خطأ غير معروف');
 
@@ -173,6 +191,16 @@ async function openQuizEditor(event, quizId) {
         Swal.fire('خطأ', 'فشل حفظ التعديلات. الرجاء المحاولة لاحقاً', 'error');
       }
     });
+
+    // helper to convert file to data URL
+    function fileToDataURL(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
 
   } catch (err) {
     console.error(err);

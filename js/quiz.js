@@ -358,19 +358,33 @@ async function openQuestionEditor(event, questionId) {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const fd = new FormData(form);
 
-    // If options textarea present, send as JSON string
+    const questionText = form.querySelector('textarea[name="question"]').value;
+    const type = form.querySelector('select[name="type"]').value;
+    const correctAnswer = form.querySelector('input[name="correctAnswer"]').value;
+
     const optionsTextarea = form.querySelector('textarea[name="options"]');
+    let options = undefined;
     if (optionsTextarea) {
-      const opts = optionsTextarea.value.split('\n').map(s => s.trim()).filter(Boolean);
-      fd.set('options', JSON.stringify(opts));
+      options = optionsTextarea.value.split('\n').map(s => s.trim()).filter(Boolean);
     }
 
+    const imageInput = form.querySelector('input[name="image"]');
+
     try {
+      let imageData = null;
+      if (imageInput && imageInput.files && imageInput.files[0]) {
+        imageData = await fileToDataURL(imageInput.files[0]);
+      }
+
+      const payload = { question: questionText, type, correctAnswer };
+      if (options !== undefined) payload.options = options;
+      if (imageData) payload.imageData = imageData;
+
       const r = await fetch(`/api/questions/${encodeURIComponent(currentQuizId)}/${encodeURIComponent(questionId)}`, {
         method: 'PUT',
-        body: fd
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
 
       const j = await r.json();
@@ -391,6 +405,15 @@ async function openQuestionEditor(event, questionId) {
       Swal.fire('خطأ', 'فشل حفظ التعديلات. الرجاء المحاولة لاحقاً', 'error');
     }
   });
+
+  function fileToDataURL(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 }
 
 function showError(message) {

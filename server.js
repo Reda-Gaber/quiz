@@ -1,5 +1,4 @@
 import express from 'express';
-import multer from 'multer';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,18 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/data/uploads', express.static(path.join(__dirname, 'data', 'uploads')));
 app.use(express.static(path.join(__dirname)));
 
-// Multer setup for file uploads
+// Ensure upload directory exists
 const uploadDir = path.join(__dirname, 'data', 'uploads');
 await fs.mkdir(uploadDir, { recursive: true });
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadDir),
-  filename: (req, file, cb) => {
-    const unique = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    const ext = path.extname(file.originalname);
-    cb(null, `${file.fieldname}-${unique}${ext}`);
-  }
-});
-const upload = multer({ storage });
 
 const QUIZZES_PATH = path.join(__dirname, 'data', 'quizzes.json');
 const QUESTIONS_PATH = path.join(__dirname, 'data', 'questions.json');
@@ -40,8 +30,21 @@ async function writeJson(filePath, data) {
   await fs.writeFile(filePath, text, 'utf-8');
 }
 
-// API: update quiz
-app.put('/api/quizzes/:id', upload.single('image'), async (req, res) => {
+// helper: save base64 data URL string to a file, return relative path
+async function saveBase64Image(dataUrl, prefix = 'image') {
+  const m = typeof dataUrl === 'string' && dataUrl.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
+  if (!m) return null;
+  const mime = m[1];
+  const b64 = m[2];
+  const ext = mime.split('/')[1].split('+')[0];
+  const filename = `${prefix}-${Date.now()}-${Math.round(Math.random() * 1e9)}.${ext}`;
+  const filepath = path.join(uploadDir, filename);
+  await fs.writeFile(filepath, Buffer.from(b64, 'base64'));
+  return `data/uploads/${filename}`;
+}
+
+// API: update quiz (accepts JSON body; imageData is optional base64 data URL)
+app.put('/api/quizzes/:id', async (req, res) => {
   try {
     const quizId = req.params.id;
     const quizzesData = await readJson(QUIZZES_PATH);
@@ -56,9 +59,9 @@ app.put('/api/quizzes/:id', upload.single('image'), async (req, res) => {
       if (req.body[f] !== undefined) quizzes[idx][f] = req.body[f];
     });
 
-    if (req.file) {
-      // store a relative URL to the uploaded file
-      quizzes[idx].image = `data/uploads/${req.file.filename}`;
+    if (req.body.imageData) {
+      const saved = await saveBase64Image(req.body.imageData, 'quiz');
+      if (saved) quizzes[idx].image = saved;
     }
 
     await writeJson(QUIZZES_PATH, { quizzes });
@@ -70,8 +73,8 @@ app.put('/api/quizzes/:id', upload.single('image'), async (req, res) => {
   }
 });
 
-// API: update question
-app.put('/api/questions/:quizId/:questionId', upload.single('image'), async (req, res) => {
+// API: update question (accepts JSON body; imageData is optional base64 data URL)
+app.put('/api/questions/:quizId/:questionId', async (req, res) => {
   try {
     const { quizId, questionId } = req.params;
     const qData = await readJson(QUESTIONS_PATH);
@@ -86,22 +89,21 @@ app.put('/api/questions/:quizId/:questionId', upload.single('image'), async (req
     const allowed = ['question', 'type', 'correctAnswer', 'options'];
     allowed.forEach(f => {
       if (req.body[f] !== undefined) {
-        // options might come as JSON string
         if (f === 'options') {
-          try {
-            questions[qIdx].options = JSON.parse(req.body.options);
-          } catch (e) {
-            // fallback to raw string
-            questions[qIdx].options = req.body.options;
+          let opts = req.body.options;
+          if (typeof opts === 'string') {
+            try { opts = JSON.parse(opts); } catch (e) { opts = opts.split('\n').map(s => s.trim()).filter(Boolean); }
           }
+          questions[qIdx].options = opts;
         } else {
           questions[qIdx][f] = req.body[f];
         }
       }
     });
 
-    if (req.file) {
-      questions[qIdx].image = `data/uploads/${req.file.filename}`;
+    if (req.body.imageData) {
+      const saved = await saveBase64Image(req.body.imageData, 'question');
+      if (saved) questions[qIdx].image = saved;
     }
 
     // write back
