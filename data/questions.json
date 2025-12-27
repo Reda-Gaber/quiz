@@ -1,0 +1,824 @@
+{
+"eis-101": {
+"quizId": "eis-101",
+"title": "نظم المعلومات المؤسسية",
+"questions": [
+{
+"id": 1,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُستخدم لتحسين الكفاءة التشغيلية للمؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 2,
+"type": "true_false",
+"question": "لا يُمكن استخدام نظم المعلومات المؤسسية في المؤسسات الصغيرة.",
+"correctAnswer": "false"
+},
+{
+"id": 3,
+"type": "true_false",
+"question": "أحد مكونات نظم المعلومات المؤسسية هو البرامج الحاسوبية.",
+"correctAnswer": "true"
+},
+{
+"id": 4,
+"type": "true_false",
+"question": "البيانات في نظم المعلومات المؤسسية ليست جزءاً أساسياً.",
+"correctAnswer": "false"
+},
+{
+"id": 5,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تعتمد على تكامل العمليات المختلفة.",
+"correctAnswer": "true"
+},
+{
+"id": 6,
+"type": "true_false",
+"question": "الهدف الأساسي لنظم المعلومات المؤسسية هو دعم الإدارة العليا فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 7,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُركز على تخزين البيانات فقط دون معالجتها.",
+"correctAnswer": "false"
+},
+{
+"id": 8,
+"type": "true_false",
+"question": "قواعد البيانات تُعد من المكونات الرئيسية لنظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 9,
+"type": "true_false",
+"question": "نظم تخطيط موارد المؤسسة (ERP) تعتبر جزءاً من نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 10,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تعتمد فقط على البيانات الداخلية.",
+"correctAnswer": "false"
+},
+{
+"id": 11,
+"type": "true_false",
+"question": "الحوسبة السحابية تُستخدم لتخزين وتشغيل نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 12,
+"type": "true_false",
+"question": "البيانات الكبيرة (Big Data) غير مفيدة في نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 13,
+"type": "true_false",
+"question": "الذكاء الاصطناعي يساعد في تحسين أداء نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 14,
+"type": "true_false",
+"question": "إنترنت الأشياء (IoT) يمكن دمجه مع نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 15,
+"type": "true_false",
+"question": "برامج تحليل البيانات ليست جزءاً من نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 16,
+"type": "true_false",
+"question": "تكامل النظم يُعد تحدياً كبيراً عند تطبيق نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 17,
+"type": "true_false",
+"question": "الأتمتة في نظم المعلومات المؤسسية تقلل من الأخطاء البشرية.",
+"correctAnswer": "true"
+},
+{
+"id": 18,
+"type": "true_false",
+"question": "الأمن السيبراني لا يُعتبر من أولويات نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 21,
+"type": "true_false",
+"question": "نظم إدارة علاقات العملاء (CRM) تُساعد في تحسين تجربة العملاء.",
+"correctAnswer": "true"
+},
+{
+"id": 22,
+"type": "true_false",
+"question": "نظام تخطيط موارد المؤسسة (ERP) يدعم جميع العمليات الإدارية.",
+"correctAnswer": "true"
+},
+{
+"id": 23,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد (SCM) ليست جزءاً من نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 24,
+"type": "true_false",
+"question": "التحليلات التنبؤية تُستخدم في تحسين القرارات في نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 25,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يتطلب إعادة تصميم العمليات التجارية.",
+"correctAnswer": "true"
+},
+{
+"id": 26,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية لا تحتاج إلى صيانة بعد تطبيقها.",
+"correctAnswer": "false"
+},
+{
+"id": 27,
+"type": "true_false",
+"question": "الأتمتة الكاملة للعمليات تقلل من الحاجة إلى الموظفين بشكل كامل.",
+"correctAnswer": "false"
+},
+{
+"id": 28,
+"type": "true_false",
+"question": "تحليل البيانات الضخمة يُمكن أن يُسهم في تحسين كفاءة العمليات.",
+"correctAnswer": "true"
+},
+{
+"id": 29,
+"type": "true_false",
+"question": "نظم إدارة المحتوى (CMS) ليست جزءاً من نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 30,
+"type": "true_false",
+"question": "التكامل بين نظم المعلومات المؤسسية ونظم المعلومات الأخرى يحسن الإنتاجية.",
+"correctAnswer": "true"
+},
+{
+"id": 31,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُركز على تحسين اتخاذ القرارات الاستراتيجية.",
+"correctAnswer": "true"
+},
+{
+"id": 32,
+"type": "true_false",
+"question": "التكامل بين الأقسام المختلفة ليس ضرورياً في نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 33,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يحتاج إلى تغيير ثقافة المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 36,
+"type": "true_false",
+"question": "تكاليف تطبيق نظم المعلومات المؤسسية تزداد مع زيادة تعقيد النظام.",
+"correctAnswer": "true"
+},
+{
+"id": 37,
+"type": "true_false",
+"question": "نظم تخطيط موارد المؤسسة (ERP) تُغطي فقط العمليات المالية.",
+"correctAnswer": "false"
+},
+{
+"id": 38,
+"type": "true_false",
+"question": "تحسين خدمة العملاء هو أحد أهداف نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 39,
+"type": "true_false",
+"question": "الأمان والخصوصية من التحديات الرئيسية في نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 40,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُساهم في تقليل تكلفة العمليات التشغيلية.",
+"correctAnswer": "true"
+},
+{
+"id": 41,
+"type": "true_false",
+"question": "البيانات الكبيرة (Big Data) لا تساهم في تحسين نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 42,
+"type": "true_false",
+"question": "إنترنت الأشياء (IoT) يُمكن أن يحسن الكفاءة التشغيلية عند دمجه مع نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 43,
+"type": "true_false",
+"question": "الذكاء الاصطناعي ليس له دور في نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 44,
+"type": "true_false",
+"question": "التحول الرقمي يُعد جزءاً من استراتيجيات نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 45,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تعتمد على الشبكات المحلية فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 46,
+"type": "true_false",
+"question": "الحوسبة السحابية تساعد في تقليل تكاليف تشغيل نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 47,
+"type": "true_false",
+"question": "تحليل البيانات في نظم المعلومات المؤسسية يساعد في تحسين أداء المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 48,
+"type": "true_false",
+"question": "التطبيقات السحابية لا تُستخدم في إدارة نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 49,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية لا تحتاج إلى تحديث دوري.",
+"correctAnswer": "false"
+},
+{
+"id": 50,
+"type": "true_false",
+"question": "الأتمتة تُعد جزءاً أساسياً في نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 51,
+"type": "true_false",
+"question": "نظم إدارة علاقات العملاء (CRM) تُساعد في إدارة بيانات العملاء فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 52,
+"type": "true_false",
+"question": "نظم تخطيط موارد المؤسسة (ERP) تُدعم جميع وظائف المؤسسة تقريباً.",
+"correctAnswer": "true"
+},
+{
+"id": 53,
+"type": "true_false",
+"question": "التحليلات التنبؤية ليست فعالة في نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 56,
+"type": "true_false",
+"question": "التكامل بين نظم المعلومات المؤسسية يحتاج إلى برمجيات متقدمة.",
+"correctAnswer": "true"
+},
+{
+"id": 57,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يقلل من الحاجة إلى الأعمال الورقية.",
+"correctAnswer": "true"
+},
+{
+"id": 58,
+"type": "true_false",
+"question": "التحليل التنبؤي يُستخدم لتوقع الاتجاهات المستقبلية في العمليات.",
+"correctAnswer": "true"
+},
+{
+"id": 59,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية لا تُستخدم لدعم العمليات اليومية.",
+"correctAnswer": "false"
+},
+{
+"id": 60,
+"type": "true_false",
+"question": "تطوير نظم المعلومات المؤسسية يستغرق وقتاً طويلاً ويحتاج إلى تخطيط دقيق.",
+"correctAnswer": "true"
+},
+{
+"id": 61,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُساعد في تحقيق أهداف استراتيجية طويلة الأجل.",
+"correctAnswer": "true"
+},
+{
+"id": 62,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد (SCM) لا تدعم العلاقات مع الموردين.",
+"correctAnswer": "false"
+},
+{
+"id": 63,
+"type": "true_false",
+"question": "الأنظمة القديمة (Legacy Systems) يمكن أن تكون عقبة في تطبيق نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 64,
+"type": "true_false",
+"question": "الحوسبة السحابية تتيح الوصول إلى نظم المعلومات من أي مكان.",
+"correctAnswer": "true"
+},
+{
+"id": 65,
+"type": "true_false",
+"question": "الذكاء الاصطناعي لا يُستخدم لتحليل بيانات نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 66,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُسهم في تحسين كفاءة استخدام الموارد.",
+"correctAnswer": "true"
+},
+{
+"id": 67,
+"type": "true_false",
+"question": "إدارة البيانات ليست مهمة في نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 68,
+"type": "true_false",
+"question": "نظم تخطيط موارد المؤسسة (ERP) تدعم عمليات الإنتاج فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 69,
+"type": "true_false",
+"question": "تحسين رضا العملاء يُعد أحد أهداف نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 70,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُسهل تقديم تقارير دقيقة.",
+"correctAnswer": "true"
+},
+{
+"id": 71,
+"type": "true_false",
+"question": "نظم إدارة الموارد البشرية (HRMS) هي جزء من نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 72,
+"type": "true_false",
+"question": "البيانات الضخمة لا تُستخدم في تحسين أداء نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 73,
+"type": "true_false",
+"question": "نظم إدارة المخزون (Inventory Management Systems) تُساعد في تقليل التكاليف.",
+"correctAnswer": "true"
+},
+{
+"id": 74,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية لا تدعم التحليلات التنبؤية.",
+"correctAnswer": "false"
+},
+{
+"id": 75,
+"type": "true_false",
+"question": "التطبيقات السحابية تُسهل من عملية تطوير نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 78,
+"type": "true_false",
+"question": "الحوسبة السحابية تزيد من المخاطر الأمنية لنظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 79,
+"type": "true_false",
+"question": "الأتمتة تُقلل من الاعتماد على الموارد البشرية في العمليات الروتينية.",
+"correctAnswer": "true"
+},
+{
+"id": 80,
+"type": "true_false",
+"question": "نظم إدارة المشاريع (PMS) ليست جزءاً من نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 81,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُستخدم فقط في المؤسسات الربحية.",
+"correctAnswer": "false"
+},
+{
+"id": 82,
+"type": "true_false",
+"question": "التحول الرقمي يُعد عاملاً أساسياً في نجاح نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 83,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يتطلب تكاليف استثمارية مرتفعة.",
+"correctAnswer": "true"
+},
+{
+"id": 84,
+"type": "true_false",
+"question": "استخدام الذكاء الاصطناعي في نظم المعلومات المؤسسية يزيد من دقة القرارات.",
+"correctAnswer": "true"
+},
+{
+"id": 85,
+"type": "true_false",
+"question": "البيانات في نظم المعلومات المؤسسية ليست قابلة للتحليل بسهولة.",
+"correctAnswer": "false"
+},
+{
+"id": 86,
+"type": "true_false",
+"question": "التحليلات التنبؤية تُسهم في تحسين قرارات الإدارة.",
+"correctAnswer": "true"
+},
+{
+"id": 87,
+"type": "true_false",
+"question": "نظم إدارة العملاء (CRM) تُساعد في تقليل نسبة فقدان العملاء.",
+"correctAnswer": "true"
+},
+{
+"id": 88,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُعقد العمليات بدلاً من تحسينها.",
+"correctAnswer": "false"
+},
+{
+"id": 89,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد (SCM) تُسهم في تحسين كفاءة التوزيع.",
+"correctAnswer": "true"
+},
+{
+"id": 90,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُمكن أن يزيد من رضا الموظفين.",
+"correctAnswer": "true"
+},
+{
+"id": 91,
+"type": "true_false",
+"question": "التكامل بين نظم المعلومات المؤسسية يزيد من تعقيد العمليات.",
+"correctAnswer": "false"
+},
+{
+"id": 92,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُساعد في تحسين التدفق المالي داخل المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 93,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تعمل فقط على تحسين العمليات الداخلية للمؤسسة.",
+"correctAnswer": "false"
+},
+{
+"id": 96,
+"type": "true_false",
+"question": "التكامل بين نظم المعلومات المؤسسية يُسهم في تقليل التكاليف التشغيلية.",
+"correctAnswer": "true"
+},
+{
+"id": 97,
+"type": "true_false",
+"question": "نظم إدارة المشاريع تُستخدم لتخطيط وتنفيذ المشروعات داخل المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 98,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية لا تُساعد في تحقيق الامتثال التنظيمي.",
+"correctAnswer": "false"
+},
+{
+"id": 99,
+"type": "true_false",
+"question": "استخدام الحوسبة السحابية في نظم المعلومات المؤسسية يقلل من المخاطر الأمنية.",
+"correctAnswer": "false"
+},
+{
+"id": 100,
+"type": "true_false",
+"question": "نظم إدارة الموارد البشرية تُساعد في تحسين كفاءة التوظيف وإدارة الموظفين.",
+"correctAnswer": "true"
+},
+{
+"id": 101,
+"type": "true_false",
+"question": "البيانات الضخمة تُستخدم لتحليل البيانات في الوقت الفعلي.",
+"correctAnswer": "true"
+},
+{
+"id": 102,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تعتمد على تقنيات الذكاء الاصطناعي لتحسين الأداء.",
+"correctAnswer": "true"
+},
+{
+"id": 103,
+"type": "true_false",
+"question": "الحوسبة السحابية لا تدعم نظم تخطيط موارد المؤسسة (ERP).",
+"correctAnswer": "false"
+},
+{
+"id": 104,
+"type": "true_false",
+"question": "إنترنت الأشياء (IoT) لا يُمكن دمجه مع نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 105,
+"type": "true_false",
+"question": "تطبيقات المحمول تُعد جزءاً من نظم المعلومات المؤسسية الحديثة.",
+"correctAnswer": "true"
+},
+{
+"id": 106,
+"type": "true_false",
+"question": "نظم إدارة علاقات العملاء (CRM) تُركز فقط على المبيعات.",
+"correctAnswer": "false"
+},
+{
+"id": 107,
+"type": "true_false",
+"question": "التحول الرقمي يُعد عملية ضرورية لتطبيق نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 108,
+"type": "true_false",
+"question": "الأتمتة تُساعد في تحسين الدقة وتقليل الأخطاء البشرية.",
+"correctAnswer": "true"
+},
+{
+"id": 109,
+"type": "true_false",
+"question": "البيانات في نظم المعلومات المؤسسية تُخزن فقط ولا تُستخدم للتحليل.",
+"correctAnswer": "false"
+},
+{
+"id": 110,
+"type": "true_false",
+"question": "استخدام نظم المعلومات المؤسسية يُسهم في تحسين رضا العملاء.",
+"correctAnswer": "true"
+},
+{
+"id": 111,
+"type": "true_false",
+"question": "نظم إدارة المحتوى تُساعد في تنظيم الوثائق والملفات داخل المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 112,
+"type": "true_false",
+"question": "التحليلات التنبؤية لا تُستخدم لاتخاذ قرارات مستقبلية في المؤسسة.",
+"correctAnswer": "false"
+},
+{
+"id": 113,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد تُساعد في تحسين كفاءة التوزيع والشحن.",
+"correctAnswer": "true"
+},
+{
+"id": 116,
+"type": "true_false",
+"question": "نظم إدارة المشاريع (PMS) تُستخدم فقط في المشاريع الهندسية.",
+"correctAnswer": "false"
+},
+{
+"id": 117,
+"type": "true_false",
+"question": "التحليلات التنبؤية تُساعد في تقليل المخاطر داخل المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 118,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يحتاج إلى تدريب مستمر للموظفين.",
+"correctAnswer": "true"
+},
+{
+"id": 119,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُركز على العمليات الروتينية فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 120,
+"type": "true_false",
+"question": "نظم إدارة الموارد البشرية (HRMS) تُستخدم لإدارة البيانات المالية للموظفين فقط.",
+"correctAnswer": "false"
+},
+{
+"id": 121,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُمكن أن يُزيد من فعالية عمليات التسويق.",
+"correctAnswer": "true"
+},
+{
+"id": 122,
+"type": "true_false",
+"question": "التكامل بين نظم إدارة العملاء (CRM) ونظم تخطيط الموارد (ERP) ليس ضرورياً.",
+"correctAnswer": "false"
+},
+{
+"id": 123,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُساعد في تحسين تحليل بيانات المبيعات.",
+"correctAnswer": "true"
+},
+{
+"id": 124,
+"type": "true_false",
+"question": "التحول الرقمي يُقلل من أهمية نظم المعلومات المؤسسية.",
+"correctAnswer": "false"
+},
+{
+"id": 125,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد تُعزز التعاون مع الموردين والشركاء.",
+"correctAnswer": "true"
+},
+{
+"id": 126,
+"type": "true_false",
+"question": "تطبيقات الذكاء الاصطناعي في نظم المعلومات المؤسسية تقتصر على الروبوتات.",
+"correctAnswer": "false"
+},
+{
+"id": 127,
+"type": "true_false",
+"question": "نظم إدارة المشاريع تُساعد في متابعة تقدم المشروع وجدولة المهام.",
+"correctAnswer": "true"
+},
+{
+"id": 128,
+"type": "true_false",
+"question": "نظم تخطيط موارد المؤسسة تُغطي العمليات المالية والتشغيلية والإدارية.",
+"correctAnswer": "true"
+},
+{
+"id": 129,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُسهم في تعزيز التنافسية في السوق.",
+"correctAnswer": "true"
+},
+{
+"id": 130,
+"type": "true_false",
+"question": "التحليلات التنبؤية تُساعد في تحسين استراتيجية المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 131,
+"type": "true_false",
+"question": "الحوسبة السحابية تقلل من القدرة على التحكم في البيانات.",
+"correctAnswer": "false"
+},
+{
+"id": 132,
+"type": "true_false",
+"question": "نظم إدارة المحتوى تُسهم في تحسين جودة المعلومات داخل المؤسسة.",
+"correctAnswer": "true"
+},
+{
+"id": 133,
+"type": "true_false",
+"question": "الأتمتة تزيد من تعقيد العمليات التشغيلية داخل المؤسسة.",
+"correctAnswer": "false"
+},
+{
+"id": 134,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُسهم في تحسين تجربة العملاء بشكل مباشر.",
+"correctAnswer": "true"
+},
+{
+"id": 135,
+"type": "true_false",
+"question": "التكامل بين نظم المعلومات المؤسسية يُسهم في تسريع اتخاذ القرارات.",
+"correctAnswer": "true"
+},
+{
+"id": 136,
+"type": "true_false",
+"question": "البيانات الكبيرة تُستخدم فقط لتحليل بيانات العملاء.",
+"correctAnswer": "false"
+},
+{
+"id": 137,
+"type": "true_false",
+"question": "استخدام نظم المعلومات المؤسسية يُسهل الامتثال للمتطلبات القانونية.",
+"correctAnswer": "true"
+},
+{
+"id": 140,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يحتاج إلى ميزانية ضخمة فقط عند البدء.",
+"correctAnswer": "false"
+},
+{
+"id": 141,
+"type": "true_false",
+"question": "نظم إدارة المشاريع تُساعد في إدارة الوقت والميزانية للمشروعات.",
+"correctAnswer": "true"
+},
+{
+"id": 142,
+"type": "true_false",
+"question": "تطبيق نظم المعلومات المؤسسية يُقلل من الحاجة إلى المهارات البشرية.",
+"correctAnswer": "false"
+},
+{
+"id": 143,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تدعم عمليات اتخاذ القرار الاستراتيجي.",
+"correctAnswer": "true"
+},
+{
+"id": 144,
+"type": "true_false",
+"question": "استخدام الحوسبة السحابية يجعل البيانات أقل أماناً دائماً.",
+"correctAnswer": "false"
+},
+{
+"id": 145,
+"type": "true_false",
+"question": "الأتمتة الكاملة للعمليات تُلغي الحاجة إلى موظفين في المؤسسة.",
+"correctAnswer": "false"
+},
+{
+"id": 146,
+"type": "true_false",
+"question": "نظم إدارة المحتوى تُسهم في تحسين التعاون بين الأقسام.",
+"correctAnswer": "true"
+},
+{
+"id": 147,
+"type": "true_false",
+"question": "تطبيق نظم تخطيط موارد المؤسسة يُساعد في تقليل الهدر في الموارد.",
+"correctAnswer": "true"
+},
+{
+"id": 148,
+"type": "true_false",
+"question": "نظم إدارة سلسلة التوريد تُساعد في تحسين استجابة المؤسسة للتغيرات.",
+"correctAnswer": "true"
+},
+{
+"id": 149,
+"type": "true_false",
+"question": "التحول الرقمي يُسهم في تحسين فعالية نظم المعلومات المؤسسية.",
+"correctAnswer": "true"
+},
+{
+"id": 150,
+"type": "true_false",
+"question": "نظم المعلومات المؤسسية تُعزز القدرة التنافسية للمؤسسة في السوق.",
+"correctAnswer": "true"
+}
+]
+}
+}
