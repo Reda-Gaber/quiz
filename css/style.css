@@ -398,6 +398,48 @@ h1 {
   margin: 20px 0;
 }
 
+/* Admin edit controls */
+.card-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.btn-edit {
+  padding: 8px 12px;
+  background: #f3f4f6;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-edit:hover { background: #eef2ff; }
+
+/* Simple modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: var(--shadow-lg);
+}
+.form-row { margin-bottom: 12px; }
+.form-row label { display:block; font-weight:600; margin-bottom:6px; }
+.form-row input[type="text"], .form-row textarea, .form-row select { width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-color); }
+.form-row input[type="file"] { display:block; }
+.form-actions { display:flex; gap:12px; justify-content:flex-end; margin-top:14px; }
+
+.preview-image { max-width: 140px; display:block; margin-top:8px; border-radius:8px; }
+
 .back-link {
   display: inline-flex;
   align-items: center;
