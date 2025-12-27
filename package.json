@@ -16,9 +16,7 @@
     "cors": "^2.8.5"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   }
 }
