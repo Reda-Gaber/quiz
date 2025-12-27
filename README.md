@@ -18,14 +18,16 @@
 
 ```
 project/
-├── index.html           # صفحة قائمة الاختبارات
-├── quiz.html            # صفحة الاختبار والنتائج
-├── css/
-│   └── style.css        # ملف التنسيقات
-├── js/
-│   ├── app.js           # منطق قائمة الاختبارات
-│   └── quiz.js          # منطق الاختبار والنتائج
-└── data/
-    ├── quizzes.json     # قائمة الاختبارات المتاحة
-    └── questions.json   # أسئلة جميع الاختبارات
+├── public/
+│   ├── index.html      # صفحة قائمة الاختبارات
+│   ├── quiz.html       # صفحة الاختبار والنتائج
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── app.js
+│   │   └── quiz.js
+│   └── data/
+│       ├── quizzes.json
+│       └── questions.json
+└── server.js           # (اختياري) خادم لتمكين تحرير الكتابة على ملفات JSON
 ```

@@ -11,15 +11,15 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/data/uploads', express.static(path.join(__dirname, 'data', 'uploads')));
-app.use(express.static(path.join(__dirname)));
+app.use('/data/uploads', express.static(path.join(__dirname, 'public', 'data', 'uploads')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Ensure upload directory exists
-const uploadDir = path.join(__dirname, 'data', 'uploads');
+// Ensure upload directory exists (under public/data)
+const uploadDir = path.join(__dirname, 'public', 'data', 'uploads');
 await fs.mkdir(uploadDir, { recursive: true });
 
-const QUIZZES_PATH = path.join(__dirname, 'data', 'quizzes.json');
-const QUESTIONS_PATH = path.join(__dirname, 'data', 'questions.json');
+const QUIZZES_PATH = path.join(__dirname, 'public', 'data', 'quizzes.json');
+const QUESTIONS_PATH = path.join(__dirname, 'public', 'data', 'questions.json');
 
 async function readJson(filePath) {
   const raw = await fs.readFile(filePath, 'utf-8');

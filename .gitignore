@@ -1,1 +1,4 @@
 node_modules/
+
+# uploaded assets
+public/data/uploads/
