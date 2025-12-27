@@ -1,12 +1,10 @@
 let quizData = null;
 let currentQuestionIndex = 0;
 let userAnswers = {};
-let currentQuizId = null;
 
 async function loadQuiz() {
   const urlParams = new URLSearchParams(window.location.search);
   const quizId = urlParams.get('id');
-  currentQuizId = quizId;
 
   if (!quizId) {
     showError('لم يتم تحديد الاختبار');
@@ -87,16 +85,8 @@ function showQuestion() {
     </div>
 
     <div class="question-card">
-      <div class="question-header" style="display:flex; justify-content:space-between; align-items:center;">
-        <div>السؤال ${currentQuestionIndex + 1}</div>
-        <div style="display:flex; gap:8px; align-items:center;">
-          <button class="btn btn-edit" onclick="openQuestionEditor(event, ${question.id})">✏️ تعديل</button>
-        </div>
-      </div>
-
+      <div class="question-header">السؤال ${currentQuestionIndex + 1}</div>
       <div class="question-text">${question.question}</div>
-      ${question.image ? `<img src="${question.image}" alt="question-image" class="preview-image" />` : ''}
-
       ${optionsHTML}
     </div>
 
@@ -281,139 +271,6 @@ function showResults(options = {}) {
 
   quizView.style.display = 'none';
   resultView.style.display = 'block';
-}
-
-// --- Question edit modal ---
-function showModal(html) {
-  const root = document.getElementById('modal-root');
-  root.innerHTML = '';
-
-  const backdrop = document.createElement('div');
-  backdrop.className = 'modal-backdrop';
-  backdrop.innerHTML = `<div class="modal-card">${html}</div>`;
-
-  backdrop.addEventListener('click', (e) => {
-    if (e.target === backdrop) root.innerHTML = '';
-  });
-
-  root.appendChild(backdrop);
-}
-
-function closeModal() {
-  const root = document.getElementById('modal-root');
-  root.innerHTML = '';
-}
-
-async function openQuestionEditor(event, questionId) {
-  event.stopPropagation();
-  if (!quizData) return Swal.fire('خطأ', 'لم يتم تحميل الاختبار بعد', 'error');
-
-  const question = quizData.questions.find(q => String(q.id) === String(questionId));
-  if (!question) return Swal.fire('خطأ', 'لم يتم العثور على السؤال', 'error');
-
-  const html = `
-    <h2>تعديل السؤال</h2>
-    <form id="question-edit-form">
-      <div class="form-row">
-        <label>نص السؤال</label>
-        <textarea name="question" rows="3" required>${escapeHtml(question.question || '')}</textarea>
-      </div>
-      <div class="form-row">
-        <label>النوع</label>
-        <select name="type">
-          <option ${question.type === 'true_false' ? 'selected' : ''} value="true_false">صواب/خطأ</option>
-          <option ${question.type === 'multiple_choice' ? 'selected' : ''} value="multiple_choice">اختيار من متعدد</option>
-        </select>
-      </div>
-      <div class="form-row" id="options-row" style="display: ${question.type === 'multiple_choice' ? 'block' : 'none'};">
-        <label>الخيارات (واحد في كل سطر)</label>
-        <textarea name="options">${question.options ? question.options.join('\n') : ''}</textarea>
-      </div>
-      <div class="form-row">
-        <label>الإجابة الصحيحة (index للخيارات أو "true"/"false")</label>
-        <input name="correctAnswer" type="text" value="${escapeHtml(question.correctAnswer)}" />
-      </div>
-      <div class="form-row">
-        <label>صورة السؤال (اختياري)</label>
-        <input name="image" type="file" accept="image/*" />
-        ${question.image ? `<img class="preview-image" src="${question.image}" alt="preview" />` : ''}
-      </div>
-
-      <div class="form-actions">
-        <button type="button" class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
-        <button type="submit" class="btn">حفظ</button>
-      </div>
-    </form>
-  `;
-
-  showModal(html);
-
-  // show/hide options textarea when type changes
-  const form = document.getElementById('question-edit-form');
-  const typeSelect = form.querySelector('select[name="type"]');
-  const optionsRow = document.getElementById('options-row');
-  typeSelect.addEventListener('change', () => {
-    optionsRow.style.display = typeSelect.value === 'multiple_choice' ? 'block' : 'none';
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const questionText = form.querySelector('textarea[name="question"]').value;
-    const type = form.querySelector('select[name="type"]').value;
-    const correctAnswer = form.querySelector('input[name="correctAnswer"]').value;
-
-    const optionsTextarea = form.querySelector('textarea[name="options"]');
-    let options = undefined;
-    if (optionsTextarea) {
-      options = optionsTextarea.value.split('\n').map(s => s.trim()).filter(Boolean);
-    }
-
-    const imageInput = form.querySelector('input[name="image"]');
-
-    try {
-      let imageData = null;
-      if (imageInput && imageInput.files && imageInput.files[0]) {
-        imageData = await fileToDataURL(imageInput.files[0]);
-      }
-
-      const payload = { question: questionText, type, correctAnswer };
-      if (options !== undefined) payload.options = options;
-      if (imageData) payload.imageData = imageData;
-
-      const r = await fetch(`/api/questions/${encodeURIComponent(currentQuizId)}/${encodeURIComponent(questionId)}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      const j = await r.json();
-      if (!j.success) throw new Error(j.message || 'خطأ في الخادم');
-
-      // Update in-memory quizData then re-render
-      const idx = quizData.questions.findIndex(q => String(q.id) === String(questionId));
-      if (idx !== -1) {
-        quizData.questions[idx] = j.question;
-      }
-
-      closeModal();
-      Swal.fire('تم', 'تم حفظ التعديلات على السؤال', 'success');
-      showQuestion();
-
-    } catch (err) {
-      console.error(err);
-      Swal.fire('خطأ', 'فشل حفظ التعديلات. الرجاء المحاولة لاحقاً', 'error');
-    }
-  });
-
-  function fileToDataURL(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
 }
 
 function showError(message) {
